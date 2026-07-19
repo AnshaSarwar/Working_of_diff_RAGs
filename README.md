@@ -1,6 +1,6 @@
 # Multi-Stage RAG Learning System (OKF)
 
-Educational Python backend that progresses through common RAG techniques on a small Open Knowledge Format (OKF) markdown bundle (`data/company_okf_bundle/`):
+Educational Python backend that progresses through common RAG techniques on a small [Open Knowledge Format (OKF)](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) bundle — Google Cloud’s vendor-neutral markdown + YAML frontmatter spec for curated agent/human knowledge (`data/company_okf_bundle/`):
 
 | Phase | What you learn | Entry points |
 |-------|----------------|--------------|
