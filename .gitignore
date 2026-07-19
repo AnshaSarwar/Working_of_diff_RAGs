@@ -1,0 +1,33 @@
+# Secrets and local env
+.env
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local vector store + model caches
+data/chroma/
+.cache/
+*.bin
+hf_cache/
+.fastembed*/
+
+# Eval outputs (regenerated locally)
+eval/results/
+*.jsonl
+
+# Semantic cache (Phase 5 — local hits)
+data/semantic_cache.json
+
+# Personal learning notes (optional — remove this line to publish them)
+ai_learning/

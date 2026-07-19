@@ -1,0 +1,110 @@
+[
+  {
+    "id": "q01",
+    "question": "What is the remote work policy?",
+    "ground_truth": "Employees may work remotely full-time or hybrid with manager approval. Remote employees get a $300 home-office stipend and may expense conference tickets under the Expense Policy with role relevance and manager pre-approval.",
+    "expected_route": "SIMPLE_FACTUAL"
+  },
+  {
+    "id": "q02",
+    "question": "What is PTO250?",
+    "ground_truth": "PTO250 is Acme Corp's Leave Policy. Full-time employees accrue 1.75 PTO days per month up to 21 days per year, may carry over up to 5 unused days, and request leave via Jira with manager approval for leave longer than 5 consecutive days.",
+    "expected_route": "SIMPLE_FACTUAL"
+  },
+  {
+    "id": "q03",
+    "question": "How much PTO do employees accrue each month?",
+    "ground_truth": "Full-time employees accrue 1.75 days of PTO per month under the Leave Policy (PTO250).",
+    "expected_route": "SIMPLE_FACTUAL"
+  },
+  {
+    "id": "q04",
+    "question": "What is the home-office stipend for remote employees?",
+    "ground_truth": "Remote employees receive a one-time $300 home-office stipend.",
+    "expected_route": "SIMPLE_FACTUAL"
+  },
+  {
+    "id": "q05",
+    "question": "What expenses can employees submit under the Expense Policy?",
+    "ground_truth": "Employees may expense conference tickets and professional development, travel for approved trips, and software/tools up to $200/month without pre-approval. Expenses under $500 are auto-approved; over $500 need manager sign-off.",
+    "expected_route": "SIMPLE_FACTUAL"
+  },
+  {
+    "id": "q06",
+    "question": "Who owns Project Atlas?",
+    "ground_truth": "Dave Kowalski owns / leads Project Atlas.",
+    "expected_route": "SIMPLE_FACTUAL"
+  },
+  {
+    "id": "q07",
+    "question": "Who is Carol Alvarez's manager?",
+    "ground_truth": "Carol Alvarez reports to Alice Chen.",
+    "expected_route": "SIMPLE_FACTUAL"
+  },
+  {
+    "id": "q08",
+    "question": "What is Jira used for at Acme?",
+    "ground_truth": "Jira is used for task tracking, sprint planning, and PTO request submission. Owned by Alice Chen.",
+    "expected_route": "SIMPLE_FACTUAL"
+  },
+  {
+    "id": "q09",
+    "question": "Who manages the person leading Project Atlas?",
+    "ground_truth": "Dave Kowalski leads Project Atlas and his manager is Alice Chen.",
+    "expected_route": "MULTI_HOP_RELATIONAL"
+  },
+  {
+    "id": "q10",
+    "question": "Who manages Bob Singh?",
+    "ground_truth": "Bob Singh's manager is Alice Chen.",
+    "expected_route": "MULTI_HOP_RELATIONAL"
+  },
+  {
+    "id": "q11",
+    "question": "Who is the manager of the owner of Project Orion?",
+    "ground_truth": "Bob Singh owns Project Orion; his manager is Alice Chen.",
+    "expected_route": "MULTI_HOP_RELATIONAL"
+  },
+  {
+    "id": "q12",
+    "question": "Who owns BigQuery at Acme and which projects use it?",
+    "ground_truth": "Carol Alvarez owns BigQuery. It is used by Project Atlas and Project Nova.",
+    "expected_route": "MULTI_HOP_RELATIONAL"
+  },
+  {
+    "id": "q13",
+    "question": "Can I expense a conference ticket if I'm remote?",
+    "ground_truth": "Yes. Fully remote employees may expense conference tickets and related travel under the Expense Policy if the conference is role-relevant and pre-approved by their manager (Remote Work Policy).",
+    "expected_route": "COMPLEX_AMBIGUOUS"
+  },
+  {
+    "id": "q14",
+    "question": "Do remote employees need manager approval for conference travel expenses?",
+    "ground_truth": "Yes. Conference tickets for remote employees require the conference to be relevant to their role and approved in advance by their manager.",
+    "expected_route": "COMPLEX_AMBIGUOUS"
+  },
+  {
+    "id": "q15",
+    "question": "How does leave interact with remote work schedules?",
+    "ground_truth": "The Leave Policy points to the Remote Work Policy for how leave interacts with remote schedules; both policies are related.",
+    "expected_route": "COMPLEX_AMBIGUOUS"
+  },
+  {
+    "id": "q16",
+    "question": "What is the maximum yearly PTO and how much can be carried over?",
+    "ground_truth": "Maximum accrual is 21 days per year; up to 5 unused PTO days may be carried into the next calendar year.",
+    "expected_route": "SIMPLE_FACTUAL"
+  },
+  {
+    "id": "q17",
+    "question": "Who are Alice Chen's direct reports?",
+    "ground_truth": "Alice Chen's direct reports are Bob Singh, Carol Alvarez, and Dave Kowalski.",
+    "expected_route": "SIMPLE_FACTUAL"
+  },
+  {
+    "id": "q18",
+    "question": "Which tools does Project Atlas use?",
+    "ground_truth": "Project Atlas uses BigQuery and Jira.",
+    "expected_route": "SIMPLE_FACTUAL"
+  }
+]

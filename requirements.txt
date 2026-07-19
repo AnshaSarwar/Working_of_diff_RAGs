@@ -1,0 +1,32 @@
+# Multi-stage RAG learning stack (Phases 1–6).
+# Install: pip install -r requirements.txt
+python-dotenv>=1.0.0
+python-frontmatter>=1.1.0
+
+# LangChain core + integrations
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-openai>=0.2.0
+langchain-chroma>=0.1.0
+
+# Local embeddings + vector store
+# fastembed (ONNX) instead of sentence-transformers/torch — avoids Windows
+# MAX_PATH install failures with the deep torch third_party tree.
+fastembed>=0.4.0
+chromadb>=0.5.0
+
+# Phase 2 — GraphRAG
+neo4j>=5.0.0
+
+# Phase 3 — Agentic RAG (also pulled in by langchain, pinned explicitly)
+langgraph>=0.2.0
+
+# Phase 4 — Hybrid BM25 + RRF (reranker uses fastembed ONNX already installed)
+rank-bm25>=0.2.2
+
+# Phase 6 — RAGAS evaluation
+ragas>=0.2.0
+datasets>=2.0.0
+pandas>=2.0.0

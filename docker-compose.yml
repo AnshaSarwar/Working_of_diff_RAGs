@@ -1,0 +1,35 @@
+# Local Neo4j Community Edition for Phase 2 GraphRAG.
+# Requires Docker Desktop: https://www.docker.com/products/docker-desktop/
+#
+# Setup:
+#   1. Copy .env.example → .env and set NEO4J_PASSWORD (never commit .env)
+#   2. docker compose up -d
+# Stop:  docker compose down
+# Browser UI: http://localhost:7474  (user neo4j / password from .env)
+#
+# No API keys or passwords are hard-coded here — only ${NEO4J_PASSWORD}
+# from the environment / .env file.
+
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: rag_okf_neo4j
+    ports:
+      - "7474:7474"   # HTTP / Browser
+      - "7687:7687"   # Bolt
+    env_file:
+      - .env
+    environment:
+      # Compose substitutes from the host/.env; .env itself stays gitignored.
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?Set NEO4J_PASSWORD in .env (see .env.example)}
+      NEO4J_PLUGINS: '[]'
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7474 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  neo4j_data:
